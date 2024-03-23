@@ -17,7 +17,6 @@ export class ArticleService {
   }
 
   async update(dto: Partial<ArticleDto>, id: string) {
-    console.log(id);
     return this.prisma.article.update({ where: { id }, data: dto });
   }
 
