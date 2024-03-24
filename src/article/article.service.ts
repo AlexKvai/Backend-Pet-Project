@@ -10,6 +10,10 @@ export class ArticleService {
     return this.prisma.article.findMany({});
   }
 
+  async getOne(id: string) {
+    return this.prisma.article.findFirst({ where: { id } });
+  }
+
   async create(dto: ArticleDto) {
     return this.prisma.article.create({
       data: dto,

@@ -22,6 +22,11 @@ export class ArticleController {
     return this.articleService.getAll();
   }
 
+  @Get(':id')
+  async getOne(@Param('id') id: string) {
+    return this.articleService.getOne(id);
+  }
+
   @UsePipes(new ValidationPipe())
   @HttpCode(200)
   @Post()
