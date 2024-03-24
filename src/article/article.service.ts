@@ -11,7 +11,7 @@ export class ArticleService {
   }
 
   async getOne(id: string) {
-    return this.prisma.article.findFirst({ where: { id } });
+    return this.prisma.article.findUnique({ where: { id } });
   }
 
   async create(dto: ArticleDto) {
